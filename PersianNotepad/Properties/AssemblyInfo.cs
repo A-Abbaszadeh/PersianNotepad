@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PersianNotepad")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("دفترچه یادداشت فارسی")]
+[assembly: AssemblyDescription("این اپلیکشن جهت یادگیری سی شارپ و دات نت فریمورک ساخته شده است")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PersianNotepad")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("استفاده رایگان از این نرم افزار منع قانونی نداشته و آزاد است.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
