@@ -68,6 +68,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +85,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PersianNotepad.ico" />
+    <None Include="Resources\contract.png" />
+    <None Include="Resources\date-and-time.png" />
+    <None Include="Resources\question.png" />
+    <None Include="Resources\font.png" />
+    <None Include="Resources\selection.png" />
+    <None Include="Resources\replace %281%29.png" />
+    <None Include="Resources\magnifying-glass.png" />
+    <None Include="Resources\paste.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\scissors.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\printing.png" />
+    <None Include="Resources\save-as.png" />
+    <None Include="Resources\floppy-disk.png" />
+    <None Include="Resources\new-window.png" />
+    <None Include="Resources\open-file-button.png" />
+    <None Include="Resources\new.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

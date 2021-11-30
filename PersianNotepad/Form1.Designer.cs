@@ -36,13 +36,42 @@ namespace PersianNotepad
             this.panel4 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.فایلToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.سندجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.ویرایشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.قالببندیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.نماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.جعبهابزارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.نواروضعیتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.راهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.سندجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.بازکردنسندToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.بازکردنپنجرهجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ذخیرهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ذخیرهدرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.چاپToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.خروجازبرنامهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.واگردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.برشToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.رونوشتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.چسباندنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.جستجوToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.جایگزینیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.انتخابهمهمتنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.درجتاریخToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.فونتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.مشاهدهراهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.دربارهبرنامهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -99,7 +128,11 @@ namespace PersianNotepad
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.فایلToolStripMenuItem});
+            this.فایلToolStripMenuItem,
+            this.ویرایشToolStripMenuItem,
+            this.قالببندیToolStripMenuItem,
+            this.نماToolStripMenuItem,
+            this.راهنماToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 28);
@@ -109,16 +142,19 @@ namespace PersianNotepad
             // فایلToolStripMenuItem
             // 
             this.فایلToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.سندجدیدToolStripMenuItem});
+            this.سندجدیدToolStripMenuItem,
+            this.بازکردنسندToolStripMenuItem,
+            this.بازکردنپنجرهجدیدToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.ذخیرهToolStripMenuItem,
+            this.ذخیرهدرToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.چاپToolStripMenuItem,
+            this.toolStripSeparator3,
+            this.خروجازبرنامهToolStripMenuItem});
             this.فایلToolStripMenuItem.Name = "فایلToolStripMenuItem";
             this.فایلToolStripMenuItem.Size = new System.Drawing.Size(50, 24);
             this.فایلToolStripMenuItem.Text = "فایل";
-            // 
-            // سندجدیدToolStripMenuItem
-            // 
-            this.سندجدیدToolStripMenuItem.Name = "سندجدیدToolStripMenuItem";
-            this.سندجدیدToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.سندجدیدToolStripMenuItem.Text = "سند جدید";
             // 
             // toolStrip1
             // 
@@ -131,24 +167,6 @@ namespace PersianNotepad
             this.toolStrip1.Size = new System.Drawing.Size(800, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // statusStrip1
             // 
@@ -175,6 +193,258 @@ namespace PersianNotepad
             this.richTextBox1.Size = new System.Drawing.Size(800, 393);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(306, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(306, 6);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(306, 6);
+            // 
+            // ویرایشToolStripMenuItem
+            // 
+            this.ویرایشToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.واگردToolStripMenuItem,
+            this.برشToolStripMenuItem,
+            this.رونوشتToolStripMenuItem,
+            this.چسباندنToolStripMenuItem,
+            this.toolStripSeparator4,
+            this.جستجوToolStripMenuItem,
+            this.جایگزینیToolStripMenuItem,
+            this.toolStripSeparator5,
+            this.انتخابهمهمتنToolStripMenuItem,
+            this.درجتاریخToolStripMenuItem});
+            this.ویرایشToolStripMenuItem.Name = "ویرایشToolStripMenuItem";
+            this.ویرایشToolStripMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.ویرایشToolStripMenuItem.Text = "ویرایش";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(241, 6);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(241, 6);
+            // 
+            // قالببندیToolStripMenuItem
+            // 
+            this.قالببندیToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.فونتToolStripMenuItem});
+            this.قالببندیToolStripMenuItem.Name = "قالببندیToolStripMenuItem";
+            this.قالببندیToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.قالببندیToolStripMenuItem.Text = "قالب بندی";
+            // 
+            // نماToolStripMenuItem
+            // 
+            this.نماToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.جعبهابزارToolStripMenuItem,
+            this.نواروضعیتToolStripMenuItem});
+            this.نماToolStripMenuItem.Name = "نماToolStripMenuItem";
+            this.نماToolStripMenuItem.Size = new System.Drawing.Size(41, 24);
+            this.نماToolStripMenuItem.Text = "نما";
+            // 
+            // جعبهابزارToolStripMenuItem
+            // 
+            this.جعبهابزارToolStripMenuItem.Checked = true;
+            this.جعبهابزارToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.جعبهابزارToolStripMenuItem.Name = "جعبهابزارToolStripMenuItem";
+            this.جعبهابزارToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.جعبهابزارToolStripMenuItem.Text = "جعبه ابزار";
+            // 
+            // نواروضعیتToolStripMenuItem
+            // 
+            this.نواروضعیتToolStripMenuItem.Checked = true;
+            this.نواروضعیتToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.نواروضعیتToolStripMenuItem.Name = "نواروضعیتToolStripMenuItem";
+            this.نواروضعیتToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
+            this.نواروضعیتToolStripMenuItem.Text = "نوار وضعیت";
+            // 
+            // راهنماToolStripMenuItem
+            // 
+            this.راهنماToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.مشاهدهراهنماToolStripMenuItem,
+            this.toolStripSeparator6,
+            this.دربارهبرنامهToolStripMenuItem});
+            this.راهنماToolStripMenuItem.Name = "راهنماToolStripMenuItem";
+            this.راهنماToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.راهنماToolStripMenuItem.Text = "راهنما";
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(221, 6);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // سندجدیدToolStripMenuItem
+            // 
+            this.سندجدیدToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources._new;
+            this.سندجدیدToolStripMenuItem.Name = "سندجدیدToolStripMenuItem";
+            this.سندجدیدToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.سندجدیدToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.سندجدیدToolStripMenuItem.Text = "سند جدید";
+            // 
+            // بازکردنسندToolStripMenuItem
+            // 
+            this.بازکردنسندToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.open_file_button;
+            this.بازکردنسندToolStripMenuItem.Name = "بازکردنسندToolStripMenuItem";
+            this.بازکردنسندToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.بازکردنسندToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.بازکردنسندToolStripMenuItem.Text = "باز کردن سند";
+            // 
+            // بازکردنپنجرهجدیدToolStripMenuItem
+            // 
+            this.بازکردنپنجرهجدیدToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.new_window;
+            this.بازکردنپنجرهجدیدToolStripMenuItem.Name = "بازکردنپنجرهجدیدToolStripMenuItem";
+            this.بازکردنپنجرهجدیدToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
+            this.بازکردنپنجرهجدیدToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.بازکردنپنجرهجدیدToolStripMenuItem.Text = "بازکردن پنجره جدید...";
+            // 
+            // ذخیرهToolStripMenuItem
+            // 
+            this.ذخیرهToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.floppy_disk;
+            this.ذخیرهToolStripMenuItem.Name = "ذخیرهToolStripMenuItem";
+            this.ذخیرهToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.ذخیرهToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.ذخیرهToolStripMenuItem.Text = "ذخیره";
+            // 
+            // ذخیرهدرToolStripMenuItem
+            // 
+            this.ذخیرهدرToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.save_as;
+            this.ذخیرهدرToolStripMenuItem.Name = "ذخیرهدرToolStripMenuItem";
+            this.ذخیرهدرToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.ذخیرهدرToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.ذخیرهدرToolStripMenuItem.Text = "ذخیره در...";
+            // 
+            // چاپToolStripMenuItem
+            // 
+            this.چاپToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.printing;
+            this.چاپToolStripMenuItem.Name = "چاپToolStripMenuItem";
+            this.چاپToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.چاپToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.چاپToolStripMenuItem.Text = "چاپ...";
+            // 
+            // خروجازبرنامهToolStripMenuItem
+            // 
+            this.خروجازبرنامهToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.exit;
+            this.خروجازبرنامهToolStripMenuItem.Name = "خروجازبرنامهToolStripMenuItem";
+            this.خروجازبرنامهToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.خروجازبرنامهToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.خروجازبرنامهToolStripMenuItem.Text = "خروج از برنامه";
+            // 
+            // واگردToolStripMenuItem
+            // 
+            this.واگردToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.undo;
+            this.واگردToolStripMenuItem.Name = "واگردToolStripMenuItem";
+            this.واگردToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
+            this.واگردToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.واگردToolStripMenuItem.Text = "واگرد";
+            // 
+            // برشToolStripMenuItem
+            // 
+            this.برشToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.scissors;
+            this.برشToolStripMenuItem.Name = "برشToolStripMenuItem";
+            this.برشToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
+            this.برشToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.برشToolStripMenuItem.Text = "برش";
+            // 
+            // رونوشتToolStripMenuItem
+            // 
+            this.رونوشتToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.copy;
+            this.رونوشتToolStripMenuItem.Name = "رونوشتToolStripMenuItem";
+            this.رونوشتToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.رونوشتToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.رونوشتToolStripMenuItem.Text = "رونوشت";
+            // 
+            // چسباندنToolStripMenuItem
+            // 
+            this.چسباندنToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.paste;
+            this.چسباندنToolStripMenuItem.Name = "چسباندنToolStripMenuItem";
+            this.چسباندنToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
+            this.چسباندنToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.چسباندنToolStripMenuItem.Text = "چسباندن";
+            // 
+            // جستجوToolStripMenuItem
+            // 
+            this.جستجوToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.magnifying_glass;
+            this.جستجوToolStripMenuItem.Name = "جستجوToolStripMenuItem";
+            this.جستجوToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.جستجوToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.جستجوToolStripMenuItem.Text = "جستجو...";
+            // 
+            // جایگزینیToolStripMenuItem
+            // 
+            this.جایگزینیToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.replace__1_;
+            this.جایگزینیToolStripMenuItem.Name = "جایگزینیToolStripMenuItem";
+            this.جایگزینیToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.جایگزینیToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.جایگزینیToolStripMenuItem.Text = "جایگزینی...";
+            // 
+            // انتخابهمهمتنToolStripMenuItem
+            // 
+            this.انتخابهمهمتنToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.selection;
+            this.انتخابهمهمتنToolStripMenuItem.Name = "انتخابهمهمتنToolStripMenuItem";
+            this.انتخابهمهمتنToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.انتخابهمهمتنToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.انتخابهمهمتنToolStripMenuItem.Text = "انتخاب همه متن";
+            // 
+            // درجتاریخToolStripMenuItem
+            // 
+            this.درجتاریخToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.date_and_time;
+            this.درجتاریخToolStripMenuItem.Name = "درجتاریخToolStripMenuItem";
+            this.درجتاریخToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.درجتاریخToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.درجتاریخToolStripMenuItem.Text = "درج تاریخ";
+            // 
+            // فونتToolStripMenuItem
+            // 
+            this.فونتToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.font;
+            this.فونتToolStripMenuItem.Name = "فونتToolStripMenuItem";
+            this.فونتToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
+            this.فونتToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.فونتToolStripMenuItem.Text = "فونت...";
+            // 
+            // مشاهدهراهنماToolStripMenuItem
+            // 
+            this.مشاهدهراهنماToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.question;
+            this.مشاهدهراهنماToolStripMenuItem.Name = "مشاهدهراهنماToolStripMenuItem";
+            this.مشاهدهراهنماToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.مشاهدهراهنماToolStripMenuItem.Text = "مشاهده راهنما";
+            // 
+            // دربارهبرنامهToolStripMenuItem
+            // 
+            this.دربارهبرنامهToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.contract;
+            this.دربارهبرنامهToolStripMenuItem.Name = "دربارهبرنامهToolStripMenuItem";
+            this.دربارهبرنامهToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.دربارهبرنامهToolStripMenuItem.Text = "درباره برنامه";
             // 
             // Form1
             // 
@@ -219,6 +489,35 @@ namespace PersianNotepad
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripMenuItem فایلToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem سندجدیدToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem بازکردنسندToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem بازکردنپنجرهجدیدToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem ذخیرهToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ذخیرهدرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem چاپToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem خروجازبرنامهToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ویرایشToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem واگردToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem برشToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem رونوشتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem چسباندنToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem جستجوToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem جایگزینیToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem انتخابهمهمتنToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem درجتاریخToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem قالببندیToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem فونتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem نماToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem جعبهابزارToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem نواروضعیتToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem راهنماToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem مشاهدهراهنماToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripMenuItem دربارهبرنامهToolStripMenuItem;
     }
 }
 
