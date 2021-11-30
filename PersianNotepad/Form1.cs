@@ -60,5 +60,20 @@ namespace PersianNotepad
         {
             DocumentIsChanged = true;
         }
+
+        private void openDocumentMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = openFileDialog1.ShowDialog();
+            if (dialogResult == DialogResult.OK)
+            {
+                string fileText = "";
+                using (StreamReader streamReader = new StreamReader(openFileDialog1.FileName))
+                {
+                    fileText = streamReader.ReadToEnd();
+                }
+                richText.Text = fileText;
+            }
+
+        }
     }
 }
