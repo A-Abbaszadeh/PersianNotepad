@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -74,6 +75,12 @@ namespace PersianNotepad
                 richText.Text = fileText;
             }
 
+        }
+
+        private void openNewWindowMenuItem_Click(object sender, EventArgs e)
+        {
+            string currentProcess = Process.GetCurrentProcess().ProcessName;
+            Process.Start(currentProcess);
         }
     }
 }

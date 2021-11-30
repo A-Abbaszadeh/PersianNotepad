@@ -56,7 +56,7 @@ namespace PersianNotepad
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.newDocumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDocumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.بازکردنپنجرهجدیدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openNewWindowMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ذخیرهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ذخیرهدرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.چاپToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -156,7 +156,7 @@ namespace PersianNotepad
             this.فایلToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newDocumentMenuItem,
             this.openDocumentMenuItem,
-            this.بازکردنپنجرهجدیدToolStripMenuItem,
+            this.openNewWindowMenuItem,
             this.toolStripSeparator1,
             this.ذخیرهToolStripMenuItem,
             this.ذخیرهدرToolStripMenuItem,
@@ -343,14 +343,15 @@ namespace PersianNotepad
             this.openDocumentMenuItem.Text = "باز کردن سند";
             this.openDocumentMenuItem.Click += new System.EventHandler(this.openDocumentMenuItem_Click);
             // 
-            // بازکردنپنجرهجدیدToolStripMenuItem
+            // openNewWindowMenuItem
             // 
-            this.بازکردنپنجرهجدیدToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.new_window;
-            this.بازکردنپنجرهجدیدToolStripMenuItem.Name = "بازکردنپنجرهجدیدToolStripMenuItem";
-            this.بازکردنپنجرهجدیدToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.openNewWindowMenuItem.Image = global::PersianNotepad.Properties.Resources.new_window;
+            this.openNewWindowMenuItem.Name = "openNewWindowMenuItem";
+            this.openNewWindowMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.N)));
-            this.بازکردنپنجرهجدیدToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.بازکردنپنجرهجدیدToolStripMenuItem.Text = "بازکردن پنجره جدید...";
+            this.openNewWindowMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.openNewWindowMenuItem.Text = "بازکردن پنجره جدید...";
+            this.openNewWindowMenuItem.Click += new System.EventHandler(this.openNewWindowMenuItem_Click);
             // 
             // ذخیرهToolStripMenuItem
             // 
@@ -601,7 +602,7 @@ namespace PersianNotepad
         private System.Windows.Forms.ToolStripMenuItem فایلToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newDocumentMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openDocumentMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem بازکردنپنجرهجدیدToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openNewWindowMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem ذخیرهToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ذخیرهدرToolStripMenuItem;
