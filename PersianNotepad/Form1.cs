@@ -17,10 +17,32 @@ namespace PersianNotepad
         public Form1()
         {
             InitializeComponent();
+            richText.Font = fontDialog1.Font;
         }
 
         bool DocumentIsChanged = false;
         string pathSave = "";
+
+        public void SaveDocument(string path, RichTextBox richTextBox)
+        {
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+                streamWriter.Write(richTextBox.Text);
+            }
+        }
+
+        public string SaveDocument(SaveFileDialog saveFileDialog, RichTextBox richTextBox)
+        {
+            var resultSave = saveFileDialog.ShowDialog();
+            if (resultSave == DialogResult.OK)
+            {
+                using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
+                {
+                    streamWriter.Write(richTextBox.Text);
+                }
+            }
+            return saveFileDialog.FileName;
+        }
 
         private void newDocumentMenuItem_Click(object sender, EventArgs e)
         {
@@ -38,16 +60,19 @@ namespace PersianNotepad
                     SaveDocument(saveFileDialog1, richText);
                     richText.Text = "";
                     DocumentIsChanged = false;
+                    pathSave = "";
                 }
                 else if (dialogResult == DialogResult.No)
                 {
                     richText.Text = "";
                     DocumentIsChanged = false;
+                    pathSave = "";
                 }
             }
             else
             {
                 richText.Text = "";
+                pathSave = "";
             }
         }
 
@@ -96,26 +121,12 @@ namespace PersianNotepad
             pathSave = SaveDocument(saveFileDialog1, richText);
         }
 
-        public void SaveDocument(string path, RichTextBox richTextBox)
-        {
-            using (StreamWriter streamWriter = new StreamWriter(path))
-            {
-                streamWriter.Write(richTextBox.Text);
-            }
-        }
 
-        public string SaveDocument(SaveFileDialog saveFileDialog, RichTextBox richTextBox)
-        {
-            var resultSave = saveFileDialog.ShowDialog();
-            if (resultSave == DialogResult.OK)
-            {
-                using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
-                {
-                    streamWriter.Write(richTextBox.Text);
-                }
-            }
-            return saveFileDialog.FileName;
-        }
 
+        private void fontMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.ShowDialog();
+            richText.Font = fontDialog1.Font;
+        }
     }
 }
