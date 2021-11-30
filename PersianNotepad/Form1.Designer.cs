@@ -57,8 +57,8 @@ namespace PersianNotepad
             this.newDocumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDocumentMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openNewWindowMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ذخیرهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ذخیرهدرToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.چاپToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.خروجازبرنامهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.واگردToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,8 +158,8 @@ namespace PersianNotepad
             this.openDocumentMenuItem,
             this.openNewWindowMenuItem,
             this.toolStripSeparator1,
-            this.ذخیرهToolStripMenuItem,
-            this.ذخیرهدرToolStripMenuItem,
+            this.saveMenuItem,
+            this.saveAsMenuItem,
             this.toolStripSeparator2,
             this.چاپToolStripMenuItem,
             this.toolStripSeparator3,
@@ -353,22 +353,24 @@ namespace PersianNotepad
             this.openNewWindowMenuItem.Text = "بازکردن پنجره جدید...";
             this.openNewWindowMenuItem.Click += new System.EventHandler(this.openNewWindowMenuItem_Click);
             // 
-            // ذخیرهToolStripMenuItem
+            // saveMenuItem
             // 
-            this.ذخیرهToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.floppy_disk;
-            this.ذخیرهToolStripMenuItem.Name = "ذخیرهToolStripMenuItem";
-            this.ذخیرهToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.ذخیرهToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.ذخیرهToolStripMenuItem.Text = "ذخیره";
+            this.saveMenuItem.Image = global::PersianNotepad.Properties.Resources.floppy_disk;
+            this.saveMenuItem.Name = "saveMenuItem";
+            this.saveMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.saveMenuItem.Text = "ذخیره";
+            this.saveMenuItem.Click += new System.EventHandler(this.saveMenuItem_Click);
             // 
-            // ذخیرهدرToolStripMenuItem
+            // saveAsMenuItem
             // 
-            this.ذخیرهدرToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.save_as;
-            this.ذخیرهدرToolStripMenuItem.Name = "ذخیرهدرToolStripMenuItem";
-            this.ذخیرهدرToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.saveAsMenuItem.Image = global::PersianNotepad.Properties.Resources.save_as;
+            this.saveAsMenuItem.Name = "saveAsMenuItem";
+            this.saveAsMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.ذخیرهدرToolStripMenuItem.Size = new System.Drawing.Size(309, 26);
-            this.ذخیرهدرToolStripMenuItem.Text = "ذخیره در...";
+            this.saveAsMenuItem.Size = new System.Drawing.Size(309, 26);
+            this.saveAsMenuItem.Text = "ذخیره در...";
+            this.saveAsMenuItem.Click += new System.EventHandler(this.saveAsMenuItem_Click);
             // 
             // چاپToolStripMenuItem
             // 
@@ -604,8 +606,8 @@ namespace PersianNotepad
         private System.Windows.Forms.ToolStripMenuItem openDocumentMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openNewWindowMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem ذخیرهToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ذخیرهدرToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveAsMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem چاپToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;

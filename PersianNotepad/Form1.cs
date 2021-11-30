@@ -20,6 +20,7 @@ namespace PersianNotepad
         }
 
         bool DocumentIsChanged = false;
+        string pathSave = "";
 
         private void newDocumentMenuItem_Click(object sender, EventArgs e)
         {
@@ -34,14 +35,7 @@ namespace PersianNotepad
                 if (dialogResult == DialogResult.Yes)
                 {
                     // Save Document
-                    var resultSave = saveFileDialog1.ShowDialog();
-                    if (resultSave == DialogResult.OK)
-                    {
-                        using (StreamWriter streamWriter = new StreamWriter(saveFileDialog1.FileName))
-                        {
-                            streamWriter.Write(richText.Text);
-                        }
-                    }
+                    SaveDocument(saveFileDialog1, richText);
                     richText.Text = "";
                     DocumentIsChanged = false;
                 }
@@ -73,8 +67,8 @@ namespace PersianNotepad
                     fileText = streamReader.ReadToEnd();
                 }
                 richText.Text = fileText;
+                pathSave = openFileDialog1.FileName;
             }
-
         }
 
         private void openNewWindowMenuItem_Click(object sender, EventArgs e)
@@ -82,5 +76,46 @@ namespace PersianNotepad
             string currentProcess = Process.GetCurrentProcess().ProcessName;
             Process.Start(currentProcess);
         }
+
+        private void saveMenuItem_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(pathSave))
+            {
+                // Save Document
+                pathSave = SaveDocument(saveFileDialog1, richText);
+            }
+            else
+            {
+                // Update Document
+                SaveDocument(pathSave, richText);
+            }
+        }
+
+        private void saveAsMenuItem_Click(object sender, EventArgs e)
+        {
+            pathSave = SaveDocument(saveFileDialog1, richText);
+        }
+
+        public void SaveDocument(string path, RichTextBox richTextBox)
+        {
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+                streamWriter.Write(richTextBox.Text);
+            }
+        }
+
+        public string SaveDocument(SaveFileDialog saveFileDialog, RichTextBox richTextBox)
+        {
+            var resultSave = saveFileDialog.ShowDialog();
+            if (resultSave == DialogResult.OK)
+            {
+                using (StreamWriter streamWriter = new StreamWriter(saveFileDialog.FileName))
+                {
+                    streamWriter.Write(richTextBox.Text);
+                }
+            }
+            return saveFileDialog.FileName;
+        }
+
     }
 }
