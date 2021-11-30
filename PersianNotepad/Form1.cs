@@ -44,30 +44,31 @@ namespace PersianNotepad
             return saveFileDialog.FileName;
         }
 
-        private void newDocumentMenuItem_Click(object sender, EventArgs e)
+        public void SaveSure()
         {
-            if (DocumentIsChanged)
-            {
-                DialogResult dialogResult = MessageBox.Show("آیا میخواهید تغییرت موجود را ذخیره کنید؟"
+            DialogResult dialogResult = MessageBox.Show("آیا میخواهید تغییرت موجود را ذخیره کنید؟"
                 , "ذخیره سند"
                 , MessageBoxButtons.YesNoCancel
                 , MessageBoxIcon.Question
                 , MessageBoxDefaultButton.Button1);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Save Document
+                SaveDocument(saveFileDialog1, richText);
+            }
+            if (dialogResult != DialogResult.Cancel)
+            {
+                richText.Text = "";
+                DocumentIsChanged = false;
+                pathSave = "";
+            }
+        }
 
-                if (dialogResult == DialogResult.Yes)
-                {
-                    // Save Document
-                    SaveDocument(saveFileDialog1, richText);
-                    richText.Text = "";
-                    DocumentIsChanged = false;
-                    pathSave = "";
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    richText.Text = "";
-                    DocumentIsChanged = false;
-                    pathSave = "";
-                }
+        private void newDocumentMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DocumentIsChanged)
+            {
+                SaveSure();
             }
             else
             {
@@ -121,12 +122,16 @@ namespace PersianNotepad
             pathSave = SaveDocument(saveFileDialog1, richText);
         }
 
-
-
         private void fontMenuItem_Click(object sender, EventArgs e)
         {
             fontDialog1.ShowDialog();
             richText.Font = fontDialog1.Font;
+        }
+
+        private void exitMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveSure();
+            Application.Exit();
         }
     }
 }
