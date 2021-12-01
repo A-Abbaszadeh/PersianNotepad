@@ -86,6 +86,8 @@ namespace PersianNotepad
             this.fontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مشاهدهراهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.دربارهبرنامهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.statusBar.SuspendLayout();
@@ -104,7 +106,7 @@ namespace PersianNotepad
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1063, 663);
+            this.panel1.Size = new System.Drawing.Size(1370, 849);
             this.panel1.TabIndex = 0;
             // 
             // panel4
@@ -112,9 +114,9 @@ namespace PersianNotepad
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Controls.Add(this.statusBar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 637);
+            this.panel4.Location = new System.Drawing.Point(0, 823);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1063, 26);
+            this.panel4.Size = new System.Drawing.Size(1370, 26);
             this.panel4.TabIndex = 2;
             // 
             // statusBar
@@ -127,7 +129,7 @@ namespace PersianNotepad
             this.wordCountLabel});
             this.statusBar.Location = new System.Drawing.Point(0, 0);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Size = new System.Drawing.Size(1063, 26);
+            this.statusBar.Size = new System.Drawing.Size(1370, 26);
             this.statusBar.TabIndex = 0;
             this.statusBar.Text = "statusStrip1";
             // 
@@ -162,7 +164,7 @@ namespace PersianNotepad
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 57);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1063, 606);
+            this.panel3.Size = new System.Drawing.Size(1370, 792);
             this.panel3.TabIndex = 1;
             // 
             // richText
@@ -170,7 +172,7 @@ namespace PersianNotepad
             this.richText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richText.Location = new System.Drawing.Point(0, 0);
             this.richText.Name = "richText";
-            this.richText.Size = new System.Drawing.Size(1063, 606);
+            this.richText.Size = new System.Drawing.Size(1370, 792);
             this.richText.TabIndex = 0;
             this.richText.Text = "";
             this.richText.TextChanged += new System.EventHandler(this.richText_TextChanged);
@@ -183,7 +185,7 @@ namespace PersianNotepad
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1063, 57);
+            this.panel2.Size = new System.Drawing.Size(1370, 57);
             this.panel2.TabIndex = 0;
             // 
             // toolBox
@@ -201,7 +203,7 @@ namespace PersianNotepad
             this.toolStripButton7});
             this.toolBox.Location = new System.Drawing.Point(0, 28);
             this.toolBox.Name = "toolBox";
-            this.toolBox.Size = new System.Drawing.Size(1063, 27);
+            this.toolBox.Size = new System.Drawing.Size(1370, 27);
             this.toolBox.TabIndex = 1;
             this.toolBox.Text = "toolStrip1";
             // 
@@ -226,7 +228,7 @@ namespace PersianNotepad
             this.helpMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1063, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -472,9 +474,10 @@ namespace PersianNotepad
             // 
             this.printMenuItem.Image = global::PersianNotepad.Properties.Resources.printing;
             this.printMenuItem.Name = "printMenuItem";
-            this.printMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.printMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.printMenuItem.Size = new System.Drawing.Size(309, 26);
             this.printMenuItem.Text = "چاپ...";
+            this.printMenuItem.Click += new System.EventHandler(this.printMenuItem_Click);
             // 
             // exitMenuItem
             // 
@@ -587,11 +590,19 @@ namespace PersianNotepad
             this.دربارهبرنامهToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.دربارهبرنامهToolStripMenuItem.Text = "درباره برنامه";
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 663);
+            this.ClientSize = new System.Drawing.Size(1370, 849);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -673,6 +684,8 @@ namespace PersianNotepad
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.ToolStripMenuItem deleteMenuItem;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
 
