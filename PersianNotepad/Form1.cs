@@ -22,6 +22,7 @@ namespace PersianNotepad
 
         bool DocumentIsChanged = false;
         string pathSave = "";
+        Stack<string> undoList = new Stack<string>();
 
         public void SaveDocument(string path, RichTextBox richTextBox)
         {
@@ -80,6 +81,7 @@ namespace PersianNotepad
         private void richText_TextChanged(object sender, EventArgs e)
         {
             DocumentIsChanged = true;
+            undoList.Push(richText.Text);
         }
 
         private void openDocumentMenuItem_Click(object sender, EventArgs e)
@@ -144,6 +146,53 @@ namespace PersianNotepad
         {
             toolBoxMenuItem.Checked = !toolBoxMenuItem.Checked;
             toolBox.Visible = !toolBox.Visible;
+        }
+
+        private void editMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            copyMenuItem.Enabled = (richText.SelectedText.Length > 0);
+            cutMenuItem.Enabled = (richText.SelectedText.Length > 0);
+            deleteMenuItem.Enabled = (richText.SelectedText.Length > 0);
+            pasteMenuItem.Enabled = Clipboard.ContainsText();
+        }
+
+        private void copyMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(richText.SelectedText))
+            {
+                Clipboard.SetText(richText.SelectedText);
+            }
+        }
+
+        private void pasteMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText())
+            {
+                richText.Paste();
+            }
+        }
+
+        private void deleteMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(richText.SelectedText))
+            {
+                richText.SelectedText = richText.SelectedText.Replace(richText.SelectedText, "");
+            }
+        }
+
+        private void cutMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(richText.SelectedText))
+            {
+                Clipboard.SetText(richText.SelectedText);
+                richText.SelectedText = richText.SelectedText.Replace(richText.SelectedText, "");
+            }
+        }
+
+        private void undoMenuItem_Click(object sender, EventArgs e)
+        {
+            undoList.Pop();
+            richText.Text = undoList.Pop();
         }
     }
 }

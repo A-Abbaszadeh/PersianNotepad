@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PersianNotepad.ico" />
+    <None Include="Resources\trash.png" />
     <None Include="Resources\contract.png" />
     <None Include="Resources\date-and-time.png" />
     <None Include="Resources\question.png" />
