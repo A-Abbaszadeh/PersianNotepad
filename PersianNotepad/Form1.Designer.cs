@@ -81,8 +81,8 @@ namespace PersianNotepad
             this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.جستجوToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.جایگزینیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.انتخابهمهمتنToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.درجتاریخToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectAllMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dateTimeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مشاهدهراهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.دربارهبرنامهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -274,8 +274,8 @@ namespace PersianNotepad
             this.جستجوToolStripMenuItem,
             this.جایگزینیToolStripMenuItem,
             this.toolStripSeparator5,
-            this.انتخابهمهمتنToolStripMenuItem,
-            this.درجتاریخToolStripMenuItem});
+            this.selectAllMenuItem,
+            this.dateTimeMenuItem});
             this.editMenuItem.Name = "editMenuItem";
             this.editMenuItem.Size = new System.Drawing.Size(69, 24);
             this.editMenuItem.Text = "ویرایش";
@@ -546,21 +546,23 @@ namespace PersianNotepad
             this.جایگزینیToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
             this.جایگزینیToolStripMenuItem.Text = "جایگزینی...";
             // 
-            // انتخابهمهمتنToolStripMenuItem
+            // selectAllMenuItem
             // 
-            this.انتخابهمهمتنToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.selection;
-            this.انتخابهمهمتنToolStripMenuItem.Name = "انتخابهمهمتنToolStripMenuItem";
-            this.انتخابهمهمتنToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.انتخابهمهمتنToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
-            this.انتخابهمهمتنToolStripMenuItem.Text = "انتخاب همه متن";
+            this.selectAllMenuItem.Image = global::PersianNotepad.Properties.Resources.selection;
+            this.selectAllMenuItem.Name = "selectAllMenuItem";
+            this.selectAllMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.selectAllMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.selectAllMenuItem.Text = "انتخاب همه متن";
+            this.selectAllMenuItem.Click += new System.EventHandler(this.selectAllMenuItem_Click);
             // 
-            // درجتاریخToolStripMenuItem
+            // dateTimeMenuItem
             // 
-            this.درجتاریخToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.date_and_time;
-            this.درجتاریخToolStripMenuItem.Name = "درجتاریخToolStripMenuItem";
-            this.درجتاریخToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.درجتاریخToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
-            this.درجتاریخToolStripMenuItem.Text = "درج تاریخ";
+            this.dateTimeMenuItem.Image = global::PersianNotepad.Properties.Resources.date_and_time;
+            this.dateTimeMenuItem.Name = "dateTimeMenuItem";
+            this.dateTimeMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.dateTimeMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.dateTimeMenuItem.Text = "درج تاریخ";
+            this.dateTimeMenuItem.Click += new System.EventHandler(this.dateTimeMenuItem_Click);
             // 
             // fontMenuItem
             // 
@@ -646,8 +648,8 @@ namespace PersianNotepad
         private System.Windows.Forms.ToolStripMenuItem جستجوToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem جایگزینیToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem انتخابهمهمتنToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem درجتاریخToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectAllMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dateTimeMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formatMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fontMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMenuItem;

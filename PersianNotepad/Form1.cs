@@ -45,7 +45,7 @@ namespace PersianNotepad
             return saveFileDialog.FileName;
         }
 
-        public void SaveSure()
+        public DialogResult SaveSure()
         {
             DialogResult dialogResult = MessageBox.Show("آیا میخواهید تغییرت موجود را ذخیره کنید؟"
                 , "ذخیره سند"
@@ -63,6 +63,7 @@ namespace PersianNotepad
                 DocumentIsChanged = false;
                 pathSave = "";
             }
+            return dialogResult;
         }
 
         private void newDocumentMenuItem_Click(object sender, EventArgs e)
@@ -132,8 +133,19 @@ namespace PersianNotepad
 
         private void exitMenuItem_Click(object sender, EventArgs e)
         {
-            SaveSure();
-            Application.Exit();
+            if (DocumentIsChanged)
+            {
+                DialogResult userResult = SaveSure();
+                if (userResult != DialogResult.Cancel)
+                {
+                    Application.Exit();
+
+                }
+            }
+            else
+            {
+                Application.Exit();
+            }
         }
 
         private void statusBarMenuItem_Click(object sender, EventArgs e)
@@ -193,6 +205,23 @@ namespace PersianNotepad
         {
             undoList.Pop();
             richText.Text = undoList.Pop();
+        }
+
+        private void selectAllMenuItem_Click(object sender, EventArgs e)
+        {
+            richText.SelectAll();
+        }
+
+        private void dateTimeMenuItem_Click(object sender, EventArgs e)
+        {
+            int cursorLocation = richText.SelectionStart;
+            string dateTime = $"{DateTime.Now} " ;
+            richText.SelectionStart = cursorLocation;
+            
+            richText.Text = richText.Text.Insert(cursorLocation, dateTime);
+            richText.SelectionStart = cursorLocation + dateTime.Length;
+
+            //richText.Text += DateTime.Now.ToString();
         }
     }
 }
