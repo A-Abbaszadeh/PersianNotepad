@@ -133,5 +133,17 @@ namespace PersianNotepad
             SaveSure();
             Application.Exit();
         }
+
+        private void statusBarMenuItem_Click(object sender, EventArgs e)
+        {
+            statusBarMenuItem.Checked = !statusBarMenuItem.Checked;
+            statusBar.Visible = !statusBar.Visible;
+        }
+
+        private void toolBoxMenuItem_Click(object sender, EventArgs e)
+        {
+            toolBoxMenuItem.Checked = !toolBoxMenuItem.Checked;
+            toolBox.Visible = !toolBox.Visible;
+        }
     }
 }
