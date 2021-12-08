@@ -60,6 +60,8 @@ namespace PersianNotepad
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
@@ -79,15 +81,13 @@ namespace PersianNotepad
             this.copyMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.جستجوToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.جایگزینیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectAllMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateTimeMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مشاهدهراهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.دربارهبرنامهToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.statusBar.SuspendLayout();
@@ -273,7 +273,7 @@ namespace PersianNotepad
             this.pasteMenuItem,
             this.deleteMenuItem,
             this.toolStripSeparator4,
-            this.جستجوToolStripMenuItem,
+            this.searchMenuItem,
             this.جایگزینیToolStripMenuItem,
             this.toolStripSeparator5,
             this.selectAllMenuItem,
@@ -359,6 +359,14 @@ namespace PersianNotepad
             // fontDialog1
             // 
             this.fontDialog1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // toolStripButton1
             // 
@@ -533,13 +541,14 @@ namespace PersianNotepad
             this.deleteMenuItem.Text = "حذف";
             this.deleteMenuItem.Click += new System.EventHandler(this.deleteMenuItem_Click);
             // 
-            // جستجوToolStripMenuItem
+            // searchMenuItem
             // 
-            this.جستجوToolStripMenuItem.Image = global::PersianNotepad.Properties.Resources.magnifying_glass;
-            this.جستجوToolStripMenuItem.Name = "جستجوToolStripMenuItem";
-            this.جستجوToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.جستجوToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
-            this.جستجوToolStripMenuItem.Text = "جستجو...";
+            this.searchMenuItem.Image = global::PersianNotepad.Properties.Resources.magnifying_glass;
+            this.searchMenuItem.Name = "searchMenuItem";
+            this.searchMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.searchMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.searchMenuItem.Text = "جستجو...";
+            this.searchMenuItem.Click += new System.EventHandler(this.searchMenuItem_Click);
             // 
             // جایگزینیToolStripMenuItem
             // 
@@ -590,14 +599,6 @@ namespace PersianNotepad
             this.دربارهبرنامهToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
             this.دربارهبرنامهToolStripMenuItem.Text = "درباره برنامه";
             // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // printDocument1
-            // 
-            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -635,7 +636,6 @@ namespace PersianNotepad
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.RichTextBox richText;
         private System.Windows.Forms.ToolStrip toolBox;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
@@ -656,7 +656,7 @@ namespace PersianNotepad
         private System.Windows.Forms.ToolStripMenuItem copyMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pasteMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem جستجوToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem searchMenuItem;
         private System.Windows.Forms.ToolStripMenuItem جایگزینیToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem selectAllMenuItem;
@@ -686,6 +686,7 @@ namespace PersianNotepad
         private System.Windows.Forms.ToolStripMenuItem deleteMenuItem;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
+        public System.Windows.Forms.RichTextBox richText;
     }
 }
 

@@ -162,6 +162,7 @@ namespace PersianNotepad
 
         private void editMenuItem_DropDownOpening(object sender, EventArgs e)
         {
+            undoMenuItem.Enabled = (undoList.Count > 0);
             copyMenuItem.Enabled = (richText.SelectedText.Length > 0);
             cutMenuItem.Enabled = (richText.SelectedText.Length > 0);
             deleteMenuItem.Enabled = (richText.SelectedText.Length > 0);
@@ -255,6 +256,12 @@ namespace PersianNotepad
             }
             else
                 e.HasMorePages = false;
+        }
+
+        private void searchMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchForm searchForm = new SearchForm(this);
+            searchForm.ShowDialog();
         }
     }
 }
