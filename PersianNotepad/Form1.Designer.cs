@@ -29,6 +29,7 @@ namespace PersianNotepad
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -88,6 +89,9 @@ namespace PersianNotepad
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.statusBar.SuspendLayout();
@@ -126,7 +130,9 @@ namespace PersianNotepad
             this.toolStripStatusLabel1,
             this.charCountLabel,
             this.toolStripStatusLabel3,
-            this.wordCountLabel});
+            this.wordCountLabel,
+            this.toolStripStatusLabel2,
+            this.timeLabel});
             this.statusBar.Location = new System.Drawing.Point(0, 0);
             this.statusBar.Name = "statusBar";
             this.statusBar.Size = new System.Drawing.Size(1370, 26);
@@ -201,9 +207,9 @@ namespace PersianNotepad
             this.toolStripButton6,
             this.toolStripSeparator8,
             this.toolStripButton7});
-            this.toolBox.Location = new System.Drawing.Point(0, 28);
+            this.toolBox.Location = new System.Drawing.Point(0, 30);
             this.toolBox.Name = "toolBox";
-            this.toolBox.Size = new System.Drawing.Size(1370, 27);
+            this.toolBox.Size = new System.Drawing.Size(1370, 31);
             this.toolBox.TabIndex = 1;
             this.toolBox.Text = "toolStrip1";
             // 
@@ -213,7 +219,7 @@ namespace PersianNotepad
             this.toolStripButton1.Image = global::PersianNotepad.Properties.Resources.undo;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton1.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripButton2
@@ -222,7 +228,7 @@ namespace PersianNotepad
             this.toolStripButton2.Image = global::PersianNotepad.Properties.Resources.scissors;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton2.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStripButton4
@@ -231,7 +237,7 @@ namespace PersianNotepad
             this.toolStripButton4.Image = global::PersianNotepad.Properties.Resources.copy;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton4.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton4.Text = "toolStripButton4";
             // 
             // toolStripButton3
@@ -240,13 +246,13 @@ namespace PersianNotepad
             this.toolStripButton3.Image = global::PersianNotepad.Properties.Resources.paste;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton3.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton3.Text = "toolStripButton3";
             // 
             // toolStripSeparator7
             // 
             this.toolStripSeparator7.Name = "toolStripSeparator7";
-            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButton5
             // 
@@ -254,7 +260,7 @@ namespace PersianNotepad
             this.toolStripButton5.Image = global::PersianNotepad.Properties.Resources.magnifying_glass;
             this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton5.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton5.Text = "toolStripButton5";
             // 
             // toolStripButton6
@@ -263,13 +269,13 @@ namespace PersianNotepad
             this.toolStripButton6.Image = global::PersianNotepad.Properties.Resources.replace__1_;
             this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton6.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton6.Text = "toolStripButton6";
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButton7
             // 
@@ -277,7 +283,7 @@ namespace PersianNotepad
             this.toolStripButton7.Image = global::PersianNotepad.Properties.Resources.printing;
             this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton7.Size = new System.Drawing.Size(29, 28);
             this.toolStripButton7.Text = "toolStripButton7";
             // 
             // menuStrip1
@@ -291,7 +297,7 @@ namespace PersianNotepad
             this.helpMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1370, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1370, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -309,7 +315,7 @@ namespace PersianNotepad
             this.toolStripSeparator3,
             this.exitMenuItem});
             this.fileMenuItem.Name = "fileMenuItem";
-            this.fileMenuItem.Size = new System.Drawing.Size(50, 24);
+            this.fileMenuItem.Size = new System.Drawing.Size(50, 26);
             this.fileMenuItem.Text = "فایل";
             // 
             // newDocumentMenuItem
@@ -407,7 +413,7 @@ namespace PersianNotepad
             this.selectAllMenuItem,
             this.dateTimeMenuItem});
             this.editMenuItem.Name = "editMenuItem";
-            this.editMenuItem.Size = new System.Drawing.Size(69, 24);
+            this.editMenuItem.Size = new System.Drawing.Size(69, 26);
             this.editMenuItem.Text = "ویرایش";
             this.editMenuItem.DropDownOpening += new System.EventHandler(this.editMenuItem_DropDownOpening);
             // 
@@ -507,7 +513,7 @@ namespace PersianNotepad
             this.formatMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fontMenuItem});
             this.formatMenuItem.Name = "formatMenuItem";
-            this.formatMenuItem.Size = new System.Drawing.Size(87, 24);
+            this.formatMenuItem.Size = new System.Drawing.Size(87, 26);
             this.formatMenuItem.Text = "قالب بندی";
             // 
             // fontMenuItem
@@ -515,7 +521,7 @@ namespace PersianNotepad
             this.fontMenuItem.Image = global::PersianNotepad.Properties.Resources.font;
             this.fontMenuItem.Name = "fontMenuItem";
             this.fontMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D)));
-            this.fontMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.fontMenuItem.Size = new System.Drawing.Size(224, 26);
             this.fontMenuItem.Text = "فونت...";
             this.fontMenuItem.Click += new System.EventHandler(this.fontMenuItem_Click);
             // 
@@ -525,7 +531,7 @@ namespace PersianNotepad
             this.toolBoxMenuItem,
             this.statusBarMenuItem});
             this.viewMenuItem.Name = "viewMenuItem";
-            this.viewMenuItem.Size = new System.Drawing.Size(41, 24);
+            this.viewMenuItem.Size = new System.Drawing.Size(41, 26);
             this.viewMenuItem.Text = "نما";
             // 
             // toolBoxMenuItem
@@ -553,7 +559,7 @@ namespace PersianNotepad
             this.toolStripSeparator6,
             this.دربارهبرنامهToolStripMenuItem});
             this.helpMenuItem.Name = "helpMenuItem";
-            this.helpMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.helpMenuItem.Size = new System.Drawing.Size(60, 26);
             this.helpMenuItem.Text = "راهنما";
             // 
             // مشاهدهراهنماToolStripMenuItem
@@ -599,6 +605,23 @@ namespace PersianNotepad
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(94, 20);
+            this.toolStripStatusLabel2.Text = "تاریخ و زمان : ";
+            // 
+            // timeLabel
+            // 
+            this.timeLabel.Name = "timeLabel";
+            this.timeLabel.Size = new System.Drawing.Size(0, 20);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -688,6 +711,9 @@ namespace PersianNotepad
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         public System.Windows.Forms.RichTextBox richText;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel timeLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

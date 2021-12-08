@@ -269,5 +269,10 @@ namespace PersianNotepad
             ReplaceForm replaceForm = new ReplaceForm(this);
             replaceForm.ShowDialog();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timeLabel.Text = DateTime.Now.ToString();
+        }
     }
 }
