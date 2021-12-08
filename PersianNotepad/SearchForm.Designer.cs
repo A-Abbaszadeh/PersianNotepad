@@ -30,11 +30,11 @@ namespace PersianNotepad
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioDown = new System.Windows.Forms.RadioButton();
+            this.radioUp = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioWholeWord = new System.Windows.Forms.RadioButton();
+            this.radioNone = new System.Windows.Forms.RadioButton();
             this.cancelButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
             this.searchTextBox = new System.Windows.Forms.TextBox();
@@ -45,8 +45,8 @@ namespace PersianNotepad
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.radioDown);
+            this.groupBox2.Controls.Add(this.radioUp);
             this.groupBox2.Location = new System.Drawing.Point(247, 69);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(184, 80);
@@ -54,32 +54,33 @@ namespace PersianNotepad
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "جهت جستجو";
             // 
-            // radioButton4
+            // radioDown
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(22, 35);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(75, 22);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "به پائین";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioDown.AutoSize = true;
+            this.radioDown.Checked = true;
+            this.radioDown.Location = new System.Drawing.Point(22, 35);
+            this.radioDown.Name = "radioDown";
+            this.radioDown.Size = new System.Drawing.Size(75, 22);
+            this.radioDown.TabIndex = 1;
+            this.radioDown.TabStop = true;
+            this.radioDown.Text = "به پائین";
+            this.radioDown.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radioUp
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(114, 35);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(64, 22);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "به بالا";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioUp.AutoSize = true;
+            this.radioUp.Location = new System.Drawing.Point(114, 35);
+            this.radioUp.Name = "radioUp";
+            this.radioUp.Size = new System.Drawing.Size(64, 22);
+            this.radioUp.TabIndex = 0;
+            this.radioUp.TabStop = true;
+            this.radioUp.Text = "به بالا";
+            this.radioUp.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.radioWholeWord);
+            this.groupBox1.Controls.Add(this.radioNone);
             this.groupBox1.Location = new System.Drawing.Point(22, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(209, 85);
@@ -87,27 +88,27 @@ namespace PersianNotepad
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "نحوه جستجو";
             // 
-            // radioButton2
+            // radioWholeWord
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(41, 57);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(162, 22);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "شامل این کلمه باشد";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioWholeWord.AutoSize = true;
+            this.radioWholeWord.Location = new System.Drawing.Point(41, 57);
+            this.radioWholeWord.Name = "radioWholeWord";
+            this.radioWholeWord.Size = new System.Drawing.Size(162, 22);
+            this.radioWholeWord.TabIndex = 1;
+            this.radioWholeWord.Text = "شامل این کلمه باشد";
+            this.radioWholeWord.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioNone
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(69, 28);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(134, 22);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "دقیقا همین کلمه";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioNone.AutoSize = true;
+            this.radioNone.Checked = true;
+            this.radioNone.Location = new System.Drawing.Point(69, 28);
+            this.radioNone.Name = "radioNone";
+            this.radioNone.Size = new System.Drawing.Size(134, 22);
+            this.radioNone.TabIndex = 0;
+            this.radioNone.TabStop = true;
+            this.radioNone.Text = "دقیقا همین کلمه";
+            this.radioNone.UseVisualStyleBackColor = true;
             // 
             // cancelButton
             // 
@@ -162,6 +163,7 @@ namespace PersianNotepad
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "جستجو";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SearchForm_FormClosing);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -174,11 +176,11 @@ namespace PersianNotepad
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioDown;
+        private System.Windows.Forms.RadioButton radioUp;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioWholeWord;
+        private System.Windows.Forms.RadioButton radioNone;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox searchTextBox;
