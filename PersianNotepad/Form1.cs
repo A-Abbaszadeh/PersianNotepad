@@ -263,5 +263,11 @@ namespace PersianNotepad
             SearchForm searchForm = new SearchForm(this);
             searchForm.ShowDialog();
         }
+
+        private void replaceMenuItem_Click(object sender, EventArgs e)
+        {
+            ReplaceForm replaceForm = new ReplaceForm(this);
+            replaceForm.ShowDialog();
+        }
     }
 }

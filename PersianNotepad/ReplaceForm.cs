@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace PersianNotepad
 {
-    public partial class SearchForm : Form
+    public partial class ReplaceForm : Form
     {
         Form1 form1;
-        public SearchForm(Form1 frm1)
+        public ReplaceForm(Form1 frm1)
         {
             form1 = frm1;
             InitializeComponent();
         }
         List<SearchResult> searchResults = new List<SearchResult>();
         int indexSelectedSearchResult = -1;
+
         private void searchButton_Click(object sender, EventArgs e)
         {
             Search();
@@ -108,16 +109,29 @@ namespace PersianNotepad
             }
         }
 
-        private void SearchForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void ReplaceForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             form1.richText.SelectionBackColor = form1.richText.BackColor;
         }
-    }
 
-    public class SearchResult
-    {
-        public int SelectionStart { get; set; }
-        public int SelectionLength { get; set; }
-        public string SearchKey { get; set; }
+        private void replaceButton_Click(object sender, EventArgs e)
+        {
+            Search();
+            if (!string.IsNullOrEmpty(form1.richText.SelectedText))
+            {
+                form1.richText.SelectionBackColor = form1.richText.BackColor;
+                form1.richText.SelectedText = form1.richText.SelectedText.Replace(form1.richText.SelectedText, replaceTextBox.Text);
+            }
+        }
+
+        private void replaceAllButton_Click(object sender, EventArgs e)
+        {
+            Search();
+            if (!string.IsNullOrEmpty(form1.richText.SelectedText))
+            {
+                form1.richText.SelectionBackColor = form1.richText.BackColor;
+                form1.richText.Text = form1.richText.Text.Replace(form1.richText.SelectedText, replaceTextBox.Text);
+            }
+        }
     }
 }
